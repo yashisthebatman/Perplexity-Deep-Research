@@ -1,0 +1,149 @@
+/* static/css/style.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-section textarea, #followUpSection textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#loadingIndicator, #followUpLoadingIndicator {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #eaf4ff;
+    border: 1px solid #c1d9f0;
+    border-radius: 4px;
+}
+
+.spinner, .spinner-small {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: spin 1s linear infinite;
+}
+.spinner {
+    width: 40px;
+    height: 40px;
+}
+.spinner-small {
+    width: 20px;
+    height: 20px;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.report-content-area {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    white-space: pre-wrap; /* Preserve whitespace and newlines from AI */
+}
+
+.report-content-area h3, .report-content-area h4 { /* Styles for markdown converted headers */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+.report-content-area ul, .report-content-area ol {
+    padding-left: 20px;
+}
+.report-content-area p {
+    margin-bottom: 1em;
+}
+.report-content-area a {
+    color: #3498db;
+    text-decoration: none;
+}
+.report-content-area a:hover {
+    text-decoration: underline;
+}
+.report-content-area code { /* Inline code */
+    background-color: #eef;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+}
+.report-content-area pre code { /* Code blocks */
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    background-color: #2d2d2d; /* Dark background for code blocks */
+    color: #f8f8f2; /* Light text for code blocks */
+    border-radius: 4px;
+}
+
+
+#chartsContainer canvas {
+    margin-top: 20px;
+    max-width: 100%;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: white; /* Ensure canvas bg is white if chart bg is transparent */
+}
+
+.error-message {
+    color: #c0392b;
+    background-color: #fdecea;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+}

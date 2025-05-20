@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Research AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- For Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For Charts -->
+</head>
+<body>
+    <div class="container">
+        <h1>AI Health Researcher</h1>
+        <p>Enter a demographic or health area to research (e.g., "diabetes in urban youth in India", "impact of air pollution on respiratory diseases in London", "latest treatments for Alzheimer's disease").</p>
+
+        <div class="input-section">
+            <textarea id="researchTopic" rows="3" placeholder="Enter research topic..."></textarea>
+            <button id="startResearchBtn">Start Deep Research</button>
+        </div>
+
+        <div id="loadingIndicator" style="display:none;">
+            <p>Researching... This may take a few minutes as multiple AI queries are being made.</p>
+            <div class="spinner"></div>
+        </div>
+        
+        <div id="errorMessage" class="error-message" style="display:none;"></div>
+
+        <div id="reportSection" style="display:none;">
+            <h2 id="reportTopic"></h2>
+            <div id="reportContent" class="report-content-area">
+                <!-- Report sections will be appended here -->
+            </div>
+            
+            <div id="chartsContainer">
+                <!-- Charts will be rendered here -->
+            </div>
+
+            <div id="followUpSection" style="margin-top: 30px;">
+                <h3>Ask a Follow-up Question</h3>
+                <textarea id="followUpQuestion" rows="2" placeholder="Ask a question about the report..."></textarea>
+                <button id="askFollowUpBtn">Ask</button>
+                <div id="followUpLoadingIndicator" style="display:none;">
+                    <p>Thinking...</p>
+                    <div class="spinner-small"></div>
+                </div>
+                <div id="followUpErrorMessage" class="error-message" style="display:none;"></div>
+                <div id="followUpAnswer" class="report-content-area" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+</body>
+</html>
